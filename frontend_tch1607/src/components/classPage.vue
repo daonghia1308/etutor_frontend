@@ -42,7 +42,7 @@
           <el-input type="textarea" :rows="2" placeholder="Please input" v-model="text"></el-input>
           <el-upload
             class="upload-demo"
-            action="http://localhost:1337/api/file/upload-image"
+            action="https://etutor-project.herokuapp.com/api/file/upload-image"
             :headers="config"
             :http-request="Upload"
             :on-remove="handleRemove"
@@ -83,7 +83,7 @@
             </el-row>
             <b-card-text>{{post.content}}</b-card-text>
             <div class="file-box" v-for="(file, index) in post.files" :key="index">
-              <a :href="`http://localhost:1337/${file.serverFileName}`">
+              <a :href="`https://etutor-project.herokuapp.com/${file.serverFileName}`">
                 <el-row>
                   <el-col :span="1">
                     <span class="el-icon-document" style="font-size: 20px;"></span>
@@ -380,11 +380,11 @@ export default {
       let url;
       let formData;
       if (this.file.type.includes("image")) {
-        url = "http://localhost:1337/api/file/upload-image";
+        url = "https://etutor-project.herokuapp.com/api/file/upload-image";
         formData = new FormData();
         formData.append("images", this.file);
       } else {
-        url = "http://localhost:1337/api/file/upload-file";
+        url = "https://etutor-project.herokuapp.com/api/file/upload-file";
         formData = new FormData();
         formData.append("files", this.file);
       }
