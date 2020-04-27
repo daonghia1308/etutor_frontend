@@ -1,5 +1,5 @@
 import axios from 'axios'
-const HOST = 'http://localhost:1337'
+const HOST = 'https://etutor-project.herokuapp.com'
 
 const request = async (url, data, method) => {
     url = HOST + url
