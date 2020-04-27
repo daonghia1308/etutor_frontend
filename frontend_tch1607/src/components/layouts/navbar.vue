@@ -4,9 +4,9 @@
       class="navbar navbar-expand-lg navbar-light"
       style="background-color: rgba(0, 77, 77, 0.9);"
     >
-      <router-link class="navbar-brand" tag="a" to="/">
+      <!-- <router-link class="navbar-brand" tag="a" to="/">
         <img src="../../assets/logo.png" style="width: 80%; height:80%;"  alt />
-      </router-link>
+      </router-link> -->
       <button
         v-on:click="handleClickNavBar"
         class="navbar-toggler"
