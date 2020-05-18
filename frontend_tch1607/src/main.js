@@ -32,6 +32,6 @@ new Vue({
   components: { App },
   template: '<App/>',
   created() {
-    io.sails.url = "http://localhost:1337";
+    io.sails.url = "https://etutor-tch1607.herokuapp.com";
   }
 })
