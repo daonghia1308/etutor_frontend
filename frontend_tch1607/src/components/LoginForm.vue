@@ -1,10 +1,6 @@
 <template>
 <body>
-  <div class="crossfade">
-    <figure></figure>
-    <figure></figure>
-    <figure></figure>
-  </div>
+  
   <div class="login-box">
     <div class="login-snip">
       <input id="tab-1" type="radio" name="tab" class="sign-in" checked />
@@ -130,13 +126,13 @@ export default {
     opacity: 0;
   }
 }
-/* body {
+body {
   background-image: url(../assets/loginBackground.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-} */
+}
 .login-box {
   width: 100%;
   margin: auto;
