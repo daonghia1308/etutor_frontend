@@ -73,7 +73,7 @@
     <div>
       <el-dialog title="User activities" :visible.sync="dialogTableVisible">
         <el-table :data="actions" v-if="actions.length > 0">
-          <el-table-column property="name" label="Name" width="150"></el-table-column>
+          <el-table-column property="name" label="Name" width="200"></el-table-column>
           <el-table-column property="time" label="created at" width="200"></el-table-column>
           <el-table-column v-if="actions.length == 0">No data</el-table-column>
         </el-table>

@@ -60,5 +60,8 @@ export default {
     },
     getMeeting: (data) => {
         return request("/api/user/get-meeting", data, "POST")
+    },
+    getTotalUser: (data) => {
+        return request("/api/statistic", data, "GET")
     }
 }

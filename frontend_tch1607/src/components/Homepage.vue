@@ -20,7 +20,7 @@
                       class="el-icon-user-solid"
                       style="font-size: 50px; color: rgba(0, 77, 77, 1)"
                     ></span>
-                    <span style="font-size: 50px">30</span>
+                    <span style="font-size: 50px">{{students}}</span>
                   </el-col>
                 </el-row>
               </div>
@@ -37,7 +37,7 @@
                       class="el-icon-s-custom"
                       style="font-size: 50px; color: rgba(0, 77, 77, 1)"
                     ></span>
-                    <span style="font-size: 50px">30</span>
+                    <span style="font-size: 50px">{{tutors}}</span>
                   </el-col>
                 </el-row>
               </div>
@@ -54,7 +54,7 @@
                       class="el-icon-school"
                       style="font-size: 50px;   color: rgba(0, 77, 77, 1)"
                     ></span>
-                    <span style="font-size: 50px">30</span>
+                    <span style="font-size: 50px">{{classes}}</span>
                   </el-col>
                 </el-row>
               </div>
@@ -74,13 +74,31 @@
 
 <script>
 import TaskList from './TaskList.vue'
+import dataService from "../network/dataService"
 export default {
   name: "home-page",
   data() {
-    return { }
+    return { 
+      tutors: 0,
+      classes: 0,
+      students: 0
+    }
   },
   components: {
     TaskList
+  },
+  methods: {
+    async getTotalUser() {
+      let rs = await dataService.getTotalUser();
+      if (rs.code == 0) {
+        this.tutors = rs.data.findTutors,
+        this.classes = rs.data.findClasses,
+        this.students = rs.data.findStudents
+      }
+    }
+  },
+  mounted() {
+    this.getTotalUser();
   }
 };
 </script>
